@@ -31,3 +31,20 @@ a1.sinks.s.collection = collection
 a1.sinks.s.batchSize = 100 
 a1.sinks.s.channel = c 
 ```
+## 自定义修改Custom modify
+可以修改其中生成json部分
+
+line 76-82 jsonEvent is the event body
+
+json event是日志主体
+
+```
+ String cuTime = getCurrentTime();
+        String jsonEvent = new String(event.getBody(), StandardCharsets.UTF_8);
+        Document sentEvent = new Document("log",jsonEvent)
+        		.append("Dir","/data/ngnix.log")
+        		.append("Time", cuTime);
+    
+        documents.add(sentEvent);
+```
+
