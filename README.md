@@ -47,4 +47,11 @@ json event是日志主体
     
         documents.add(sentEvent);
 ```
+## tips
 
+本mongodbsink 支持3.0版本
+
+线上使用需在flume/lib下添加一下几个jar包
+- mongodb-driver-3.0.2.jar
+- mongodb-driver-core-3.0.2.jar
+- bson-3.0.2.jar
